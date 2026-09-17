@@ -1,33 +1,5 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>NOT — Jogos interativos para suas lives</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<main class="landing">
-<header><a class="logo" href="#">NOT<span>.</span></a><button class="ghost" id="loginTop">Entrar</button></header>
-<section class="hero">
-<div class="badge">● JOGOS INTERATIVOS PARA LIVE</div>
-<h1>Sua live.<br><em>Outro nível.</em></h1>
-<p>Uma assinatura. Um catálogo de experiências interativas para transformar sua live e jogar com sua audiência.</p>
-<div class="actions"><button class="primary" data-action="plans">Conhecer planos</button><button class="secondary" data-action="login">Já sou assinante</button></div>
-</section>
-<section class="preview">
-<div class="preview-head"><div><small>NOT GAMES</small><h2>Seu Hall de jogos</h2></div><span>Catálogo por assinatura</span></div>
-<div class="cards">
-<article><div class="art">N</div><b>Jogos para sua live</b><small>Interação em tempo real</small></article>
-<article><div class="art">O</div><b>Uma única assinatura</b><small>Acesso conforme seu plano</small></article>
-<article><div class="art">T</div><b>Jogue onde estiver</b><small>Web • Mobile • Desktop</small></article>
-</div>
-</section>
-</main>
-<div class="modal" id="plans"><div class="sheet"><button class="close">×</button><small>ASSINATURAS NOT</small><h2>Escolha sua assinatura</h2><p>Esta é a interface inicial. A ativação real será conectada ao backend de assinaturas.</p><div class="plans">
-<div class="plan"><b>Normal</b><strong>R$ 9,99</strong><span>Catálogo Normal</span><button>Assinar</button></div>
-<div class="plan featured"><i>MAIS POPULAR</i><b>Plus ⭐</b><strong>R$ 20,00</strong><span>Normal + catálogo Plus</span><button>Assinar</button></div>
-<div class="plan"><b>Premium</b><strong>R$ 39,99</strong><span>Catálogo completo</span><button>Assinar</button></div>
-</div></div></div>
-<div class="modal" id="login"><div class="sheet compact"><button class="close">×</button><small>ÁREA DO ASSINANTE</small><h2>Entrar na NOT</h2><p>Quando a autenticação estiver conectada, o servidor confirmará automaticamente plano e jogos liberados.</p><label>E-mail<input type="email" placeholder="seu@email.com"></label><label>Senha<input type="password" placeholder="••••••••"></label><button class="primary full">Entrar</button></div></div>
-<script src="app.js"></script>
-</body></html>
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>NOT Hall</title><link rel="stylesheet" href="styles.css"></head><body>
+<header><a class="logo" href="#">NOT<span>.</span></a><nav><button class="active" data-filter="all">Todos</button><button data-filter="live">Live</button><button data-filter="casual">Casual</button><button data-filter="new">Novos</button></nav><div class="right"><button class="searchBtn" aria-label="Buscar">⌕</button><div class="avatar">N</div></div></header>
+<main><section class="welcome"><div><small>NOT GAMES</small><h1>Escolha um jogo</h1><p>Seu catálogo de jogos em um só lugar.</p></div><label class="search"><span>⌕</span><input id="search" placeholder="Buscar jogo..."></label></section>
+<section><div class="sectionTitle"><h2>Jogos</h2><span id="count"></span></div><div class="grid" id="games"></div><div class="empty" id="empty">Nenhum jogo encontrado.</div></section></main>
+<script src="app.js"></script></body></html>
