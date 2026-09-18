@@ -1,4 +1,5 @@
-// Catálogo do Hall. Mantenha somente jogos realmente publicados.
-// URLs de jogos não são segredo: a autorização de cada jogo deve continuar sendo validada pelo ecossistema NOT.
-export const GAMES=Object.freeze([]);
-export function visibleGames(plan){return GAMES.filter(game=>!game.plans||game.plans.includes(plan))}
+const PA_BASE='https://pa.wallissonghost.workers.dev';
+function token(){return window.NOT_LICENSE_SESSION?.getToken?.()||null}
+async function json(res){const data=await res.json().catch(()=>({}));if(!res.ok)throw Object.assign(new Error(data.error||data.reason||`PA_${res.status}`),{status:res.status,reason:data.reason||data.error});return data}
+export async function loadCatalog(){const session=token();if(!session)throw new Error('SESSION_REQUIRED');const data=await json(await fetch(`${PA_BASE}/api/games`,{headers:{Authorization:`Bearer ${session}`},cache:'no-store'}));return(data.games||[]).map(g=>({id:g.game_id,name:g.name,desc:g.description||'',cat:g.category||'live',image:g.image_url||'',tag:g.category==='new'?'NOVO':'JOGO'}))}
+export async function requestGameLaunch(gameId){const session=token();if(!session)throw new Error('SESSION_REQUIRED');return json(await fetch(`${PA_BASE}/api/games/session`,{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${session}`},body:JSON.stringify({gameId}),cache:'no-store'}))}
