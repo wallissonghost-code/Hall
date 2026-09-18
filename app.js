@@ -7,3 +7,11 @@ function mountHall(session){const games=visibleGames(session.plan);gate.remove()
 async function submit(key){button.disabled=true;input.disabled=true;status('Validando assinatura…');try{const session=await validateLicense(key);status('Assinatura confirmada.','ok');mountHall(session)}catch(e){status(e.message||'Não foi possível confirmar a assinatura.','error');input.disabled=false;button.disabled=false;input.focus()}}
 form.addEventListener('submit',e=>{e.preventDefault();submit(input.value)});
 (async()=>{status('Verificando assinatura salva…');const session=await restoreLicense();if(session){mountHall(session);return}status('Digite sua chave NOT para continuar.');input.focus()})();
+
+// Bloqueia gestos de zoom no Hall (pinça e duplo toque), especialmente no iOS/Safari.
+document.addEventListener('gesturestart',e=>e.preventDefault(),{passive:false});
+document.addEventListener('gesturechange',e=>e.preventDefault(),{passive:false});
+document.addEventListener('gestureend',e=>e.preventDefault(),{passive:false});
+let lastTouchEnd=0;
+document.addEventListener('touchend',e=>{const now=Date.now();if(now-lastTouchEnd<=300)e.preventDefault();lastTouchEnd=now},{passive:false});
+document.addEventListener('touchmove',e=>{if(e.touches.length>1)e.preventDefault()},{passive:false});
