@@ -9,15 +9,17 @@
 </head>
 <body>
   <section id="gate" class="gate" aria-labelledby="gateTitle">
+    <div class="gate-orb gate-orb-a"></div><div class="gate-orb gate-orb-b"></div>
     <form id="licenseForm" class="gate-card">
-      <div class="gate-logo">NOT<span>.</span></div>
-      <small>ÁREA EXCLUSIVA</small>
-      <h1 id="gateTitle">Assinatura NOT</h1>
-      <p>Use a chave da sua assinatura NOT para liberar o Hall.</p>
+      <div class="gate-brand"><div class="gate-logo">NOT<span>.</span></div><span>HALL</span></div>
+      <div class="gate-badge"><i></i> ACESSO EXCLUSIVO</div>
+      <h1 id="gateTitle">Seu Hall.<br><em>Seus jogos.</em></h1>
+      <p>Entre com sua assinatura NOT e acesse sua biblioteca.</p>
       <label class="key-label" for="licenseKey">CHAVE DA ASSINATURA</label>
-      <input id="licenseKey" type="password" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="NOT-XXXX-XXXX-XXXX-XXXX-XXXX">
-      <button id="verify" type="submit">Validar assinatura</button>
+      <div class="key-field"><span>◆</span><input id="licenseKey" type="password" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="NOT-XXXX-XXXX-XXXX-XXXX-XXXX"></div>
+      <button id="verify" type="submit"><span>Entrar no Hall</span><b>→</b></button>
       <div id="gateStatus" role="status">Carregando validação…</div>
+      <div class="gate-foot"><span>●</span> Ambiente protegido pela sessão NOT</div>
     </form>
   </section>
   <div id="app" hidden></div>
