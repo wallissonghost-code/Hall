@@ -3,3 +3,20 @@
 .session-check{position:relative;z-index:1;width:min(440px,100%);min-height:380px;padding:42px 34px;border:1px solid #17221b;border-radius:28px;background:linear-gradient(145deg,#0c110eef,#080b09f5);box-shadow:0 30px 90px #0009,inset 0 1px #ffffff08;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;backdrop-filter:blur(20px)}.check-brand{position:absolute;top:28px;left:30px;font-size:25px;font-weight:950;letter-spacing:-2.3px}.check-brand span{color:var(--green)}.check-brand small{font-size:7px;letter-spacing:2px;color:#59655d;margin-left:8px}.check-ring{width:68px;height:68px;border:1px solid #1e3928;border-radius:50%;display:grid;place-items:center;margin:12px 0 25px;box-shadow:0 0 35px #2cf27a0c}.check-ring:before{content:"";width:48px;height:48px;border:2px solid #16241b;border-top-color:var(--green);border-radius:50%;animation:notspin 1s linear infinite}.check-ring i{position:absolute;width:6px;height:6px;background:var(--green);border-radius:50%;box-shadow:0 0 14px var(--green)}.session-check h1{font-size:27px;letter-spacing:-1.4px;margin:0 0 8px}.session-check p{font-size:12px;color:#718078;margin:0}.check-secure{position:absolute;bottom:28px;font-size:8px;letter-spacing:1.2px;color:#4e5b53}.check-secure span{color:var(--green);font-size:6px;margin-right:5px}@keyframes notspin{to{transform:rotate(360deg)}}
 
 .pin-field input{font-size:22px;font-weight:900;letter-spacing:8px;text-align:center}.secondary-gate{background:#101612!important;color:#a7b3ab!important;border:1px solid #202b24!important;box-shadow:none!important}.pin-display{display:grid;gap:10px;margin:8px 0 18px;padding:18px;border:1px solid #21432c;border-radius:16px;background:#09150e;text-align:center}.pin-display strong{font-size:34px;letter-spacing:8px;color:#8cf9af}.pin-display button{margin:0!important;height:42px!important;justify-content:center!important;background:#142019!important;color:#9bf8b7!important;border:1px solid #244c31!important;box-shadow:none!important}#pinStatus{min-height:16px;text-align:center;font-size:10px;color:#637068;margin-top:13px}#pinStatus[data-kind=error]{color:#ff8f8f}
+
+
+/* iOS/PWA shell: respect the standalone safe area instead of hiding content behind the status bar. */
+html{background:#050706}
+body{min-height:100dvh}
+@media(max-width:720px){
+  html.hall-ready body{padding-top:env(safe-area-inset-top,0px)}
+  html.hall-ready header{top:0;height:calc(66px + env(safe-area-inset-top,0px));padding-top:env(safe-area-inset-top,0px)}
+  html.hall-ready main{padding-top:24px}
+}
+@media(display-mode:standalone){
+  body{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  header{top:0;height:calc(76px + env(safe-area-inset-top,0px));padding-top:env(safe-area-inset-top,0px)}
+}
+@media(display-mode:standalone) and (max-width:720px){
+  header{height:calc(66px + env(safe-area-inset-top,0px))}
+}
