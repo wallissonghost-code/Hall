@@ -1,28 +1,6 @@
 <!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-  <meta name="theme-color" content="#050706">
-  <title>NOT Hall</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <section id="gate" class="gate" aria-labelledby="gateTitle">
-    <div class="gate-orb gate-orb-a"></div><div class="gate-orb gate-orb-b"></div>
-    <form id="licenseForm" class="gate-card">
-      <div class="gate-brand"><div class="gate-logo">NOT<span>.</span></div><span>HALL</span></div>
-      <div class="gate-badge"><i></i> ACESSO EXCLUSIVO</div>
-      <h1 id="gateTitle">Seu Hall.<br><em>Seus jogos.</em></h1>
-      <p>Entre com sua assinatura NOT e acesse sua biblioteca.</p>
-      <label class="key-label" for="licenseKey">CHAVE DA ASSINATURA</label>
-      <div class="key-field"><span>◆</span><input id="licenseKey" type="password" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="NOT-XXXX-XXXX-XXXX-XXXX-XXXX"></div>
-      <button id="verify" type="submit"><span>Entrar no Hall</span><b>→</b></button>
-      <div id="gateStatus" role="status">Carregando validação…</div>
-      <div class="gate-foot"><span>●</span> Ambiente protegido pela sessão NOT</div>
-    </form>
-  </section>
-  <div id="app" hidden></div>
-  <script type="module" src="app.js"></script>
-</body>
-</html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#050706"><title>NOT Hall</title><link rel="stylesheet" href="styles.css"></head><body>
+<section id="gate" class="gate" aria-labelledby="gateTitle"><div class="gate-orb gate-orb-a"></div><div class="gate-orb gate-orb-b"></div>
+<div id="sessionCheck" class="session-check"><div class="check-brand">NOT<span>.</span><small>HALL</small></div><div class="check-ring"><i></i></div><h1>Preparando seu Hall</h1><p id="checkStatus">Verificando sua sessão NOT…</p><div class="check-secure"><span>●</span> CONEXÃO PROTEGIDA</div></div>
+<form id="licenseForm" class="gate-card auth-required" hidden><div class="gate-brand"><div class="gate-logo">NOT<span>.</span></div><span>HALL</span></div><div class="gate-badge"><i></i> AUTENTICAÇÃO NECESSÁRIA</div><h1 id="gateTitle">Acesse seu<br><em>Hall.</em></h1><p>Sua sessão precisa ser autenticada. Informe a chave da sua assinatura NOT.</p><label class="key-label" for="licenseKey">CHAVE DA ASSINATURA</label><div class="key-field"><span>◆</span><input id="licenseKey" type="password" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="NOT-XXXX-XXXX-XXXX-XXXX-XXXX"></div><button id="verify" type="submit"><span>Validar assinatura</span><b>→</b></button><div id="gateStatus" role="status"></div><div class="gate-foot"><span>●</span> Ambiente protegido pela sessão NOT</div></form></section>
+<div id="app" hidden></div><script type="module" src="app.js"></script></body></html>
