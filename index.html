@@ -1,4 +1,26 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><title>NOT Hall</title><link rel="stylesheet" href="styles.css"></head><body>
-<div id="gate"><div class="gate-card"><div class="gate-logo">NOT<span>.</span></div><small>ÁREA EXCLUSIVA</small><h1>Assinatura NOT</h1><p>Confirme sua assinatura para acessar o Hall de jogos.</p><button id="verify">Confirmar assinatura</button><div id="gateStatus">Aguardando confirmação</div></div></div>
-<div id="app" hidden></div>
-<script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#050706">
+  <title>NOT Hall</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section id="gate" class="gate" aria-labelledby="gateTitle">
+    <form id="licenseForm" class="gate-card">
+      <div class="gate-logo">NOT<span>.</span></div>
+      <small>ÁREA EXCLUSIVA</small>
+      <h1 id="gateTitle">Assinatura NOT</h1>
+      <p>Use a chave da sua assinatura NOT para liberar o Hall.</p>
+      <label class="key-label" for="licenseKey">CHAVE DA ASSINATURA</label>
+      <input id="licenseKey" type="password" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="NOT-XXXX-XXXX-XXXX-XXXX-XXXX">
+      <button id="verify" type="submit">Validar assinatura</button>
+      <div id="gateStatus" role="status">Carregando validação…</div>
+    </form>
+  </section>
+  <div id="app" hidden></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
